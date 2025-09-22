@@ -1,0 +1,19 @@
+.custom-placeholder .MuiInputBase-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1; /* Override default opacity */
+}
+/* Login.css */
+
+.custom-placeholder .MuiFilledInput-root {
+    color: #E0E0E0; /* Set input text color to a light gray */
+}
+
+.custom-placeholder .MuiFilledInput-root::placeholder {
+    color: #c71919; /* Lighter placeholder color */
+    opacity: 1;
+}
+
+/* Adjust TextField and icon colors */
+.custom-placeholder .MuiFilledInput-root .MuiIconButton-root {
+    color: #1500ff; /* Icon color */
+}
