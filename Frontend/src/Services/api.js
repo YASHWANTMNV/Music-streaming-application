@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use environment variable for API URL or fallback to localhost
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+// Use environment variable for API URL or fallback to localhost (backend now on 8081)
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8081';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -188,7 +188,7 @@ export const removeFromFav = async (favoriteId) => {
 // Get all albums
 export const getAllAlbums = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/albums');
+    const response = await fetch(`${BASE_URL}/api/albums`);
     if (!response.ok) {
       throw new Error('Failed to fetch albums');
     }
@@ -202,7 +202,7 @@ export const getAllAlbums = async () => {
 // Add a new album
 export const addAlbum = async (albumData) => {
   try {
-    const response = await fetch('http://localhost:8080/api/albums', {
+    const response = await fetch(`${BASE_URL}/api/albums`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -222,7 +222,7 @@ export const addAlbum = async (albumData) => {
 // Add song to album
 export const addSongToAlbum = async (albumId, songId) => {
   try {
-    const response = await fetch(`http://localhost:8080/api/albums/${albumId}/songs/${songId}`, {
+    const response = await fetch(`${BASE_URL}/api/albums/${albumId}/songs/${songId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
